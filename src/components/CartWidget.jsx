@@ -3,7 +3,7 @@ import cart from '../assets/cart.png'
 export const CartWidget = () => {
     return (
     <>
-    <img src={cart} />5
+    <img src={cart} height={24}/> <span>9</span>
     </>
     )
 }
