@@ -2,108 +2,108 @@
     {
         "id": "1",
         "name": "Remera Nave verde",
-        "image": "../assets/images/remera-nave.verde.jpg",
+        "image": "../assets/remera-nave-verde.jpg",
         "category": "remera",
         "price": 5000,
-        "detalle": "Remera básica, 100% algodón con el logo de nuestra marca. Calidad pura"
+        "detail": "Remera básica, 100% algodón con el logo de nuestra marca. Calidad pura"
     },
 
     {
         "id": "2",
         "name": "Remera Radiohead",
-        "image": "./assets/images/remeras/remera-radiohead.jpg",
+        "image": "../assets/remera-radiohead.jpg",
         "category": "remera",
         "price": 5000,
-        "detalle": "Remera de la mítica banda Radiohead. 100% algodón. Para que salgas a lucir que te gusta la música de verdad y que no le tenés miedo a los sábados depresivos"
+        "detail": "Remera de la mítica banda Radiohead. 100% algodón. Para que salgas a lucir que te gusta la música de verdad y que no le tenés miedo a los sábados depresivos"
     },
 
     {
         "id": "3",
         "name": "Remera Quentin",
-        "image": "./assets/images/remeras/remera-quentin.jpg",
+        "image": "../assets/remera-quentin.jpg",
         "category": "remera",
         "price": 5000,
-        "detalle": "Remera del mítico director, escritor y productor de Hollywood que ya marcó a más de una generación. Para que presumas tus gustos comunes con gente que va al cine a ver Rápido y Furioso"
+        "detail": "Remera del mítico director, escritor y productor de Hollywood que ya marcó a más de una generación. Para que presumas tus gustos comunes con gente que va al cine a ver Rápido y Furioso"
     },
 
     {
         "id": "4",
         "name": "Remera Linkin Park",
-        "image": "./assets/images/remeras/remera-linkin-park.jpg",
+        "image": "../assets/remera-linkin-park.jpg",
         "category": "remera",
         "price": 5000,
-        "detalle": "Remera de la banda que inició en el rock alternativo y/o el metal a gente que hoy ya tiene más de una década de aportes"
+        "detail": "Remera de la banda que inició en el rock alternativo y/o el metal a gente que hoy ya tiene más de una década de aportes"
     },
 
     {
         "id": "5",
         "name": "Remera Rolling",
-        "image": "./assets/images/remeras/remera-rolling.jpg",
+        "image": "../assets/remera-rolling.jpg",
         "category": "remera",
         "price": 5000,
-        "detalle": "Para rockear. 100% algodón." 
+        "detail": "Para rockear. 100% algodón." 
     },
 
     {
         "id": "6",
         "name": "Remera Logo negra",
-        "image": "./assets/images/remeras/remera-logo-negra.jpg",
+        "image": "../assets/remera-logo-negra.jpg",
         "category": "remera",
         "price": 5000,
-        "detalle": "Remera básica, 100% algodón con el logo de nuestra marca. Calidad pura"
+        "detail": "Remera básica, 100% algodón con el logo de nuestra marca. Calidad pura"
     },
 
     {
         "id": "7",
         "name": "Remera Logo verde",
-        "image": "./assets/images/remeras/remera-logo-verde.jpg",
+        "image": "../assets/remera-logo-verde.jpg",
         "category": "remera",
         "price": 5000,
-        "detalle":"Remera básica, 100% algodón con el logo de nuestra marca. Calidad pura"
+        "detail":"Remera básica, 100% algodón con el logo de nuestra marca. Calidad pura"
     },
 
     {
         "id": "8",
         "name": "Buzo Nirvana",
-        "image": "./assets/images/buzos/buzo-nirvana.jpg",
+        "image": "../assets/buzo-nirvana.jpg",
         "category": "buzo",
         "price": 10000,
-        "detalle": "Buzo de la mítica banda de grunje de los 90. 100& algodón peinado"
+        "detail": "Buzo de la mítica banda de grunje de los 90. 100% algodón peinado"
     },
 
     {
         "id": "9",
         "name": "Buzo Nave",
-        "image": "./assets/images/buzos/buzo-nave.jpg",
+        "image": "../assets/buzo-nave.jpg",
         "category": "buzo",
         "price": 10000,
-        "detalle": "Buzo 100% algodón peinado. Básico y cómodo para combinar con cualquier cosa y en cualquier situación"
+        "detail": "Buzo 100% algodón peinado. Básico y cómodo para combinar con cualquier cosa y en cualquier situación"
     },  
 
     {
         "id": "10",
         "name": "Buzo Rolling",
-        "image": "./assets/images/buzos/buzo-rolling.jpg",
+        "image": "../assets/buzo-rolling.jpg",
         "category": "buzo",
         "price": 10000,
-        "detalle": "Buzo de los rolling. Para usar en casamientos, bautismos y cumpleaños de 15"
+        "detail": "Buzo de los rolling. Para usar en casamientos, bautismos y cumpleaños de 15"
     },
 
     {
         "id": "11",
         "name": "Buzo Linkn Park",
-        "image": "./assets/images/buzos/buzo-linkin-park.jpg",
+        "image": "../assets/buzo-linkin-park.jpg",
         "category": "buzo",
         "price": 10000,
-        "detalle": "Buzo de la banda que inició en el rock alternativo y/o el metal a gente que hoy ya tiene más de una década de aportes"
+        "detail": "Buzo de la banda que inició en el rock alternativo y/o el metal a gente que hoy ya tiene más de una década de aportes"
     },
 
     {
         "id": "12",
         "name": "Buzo ACDC",
-        "image": "./assets/images/buzos/buzo-acdc.jpg",
+        "image": "../assets/buzo-acdc.jpg",
         "category": "buzo",
         "price": 10000,
-        "detalle": "Buzo de la eterna banda que al día de hoy sigue haciendo bailar y despeinarse a jóvenes y jubilados por igual"
+        "detail": "Buzo de la eterna banda que al día de hoy sigue haciendo bailar y despeinarse a jóvenes y jubilados por igual"
     }
 ]

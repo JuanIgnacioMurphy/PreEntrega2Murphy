@@ -1,0 +1,19 @@
+.card-img {
+    height: 400px; 
+    object-fit: cover; 
+    margin-bottom: 20px; 
+}
+
+.item-details-card {
+    width: 80%; 
+    max-width: 800px; 
+    margin: 20px 0; 
+    padding: 20px; 
+    border-radius: 10px; 
+}
+
+.price {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    margin-top: 20px;
+}
