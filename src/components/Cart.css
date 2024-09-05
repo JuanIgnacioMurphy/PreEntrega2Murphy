@@ -1,0 +1,15 @@
+/* Cart.css */
+
+/* Asegúrate de que las imágenes sean de 200px de ancho y con altura automática */
+.cart-img {
+    width: 200px;
+    height: auto;
+}
+
+/* Ajusta el ancho de las Cards al 50% del contenedor y mantenlas centradas */
+.cart-card {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Puedes añadir más estilos personalizados si es necesario */

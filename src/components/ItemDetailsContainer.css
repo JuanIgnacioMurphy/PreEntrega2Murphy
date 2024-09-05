@@ -17,3 +17,21 @@
     font-weight: bold;
     margin-top: 20px;
 }
+
+.stock {
+    font-size: 1rem; 
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* ItemDetailsContainer.css */
+
+/* Ajustes adicionales para los botones si es necesario */
+.item-count-button {
+    margin: 0 5px;
+}
+
+.item-count-container {
+    display: flex;
+    align-items: center;
+}

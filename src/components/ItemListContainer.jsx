@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import data from "../../data/productos.json";
+import { getFirestore, getDocs, where, query, collection } from "firebase/firestore";
 
 export const ItemListContainer = () => {
     const [items, setItems] = useState([]);
@@ -11,20 +11,21 @@ export const ItemListContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        setLoading(true)
-        new Promise((resolve, reject) => {
-            setTimeout(() => resolve(data), 2000);
-        })
-        .then((response) => {
-            if (!id) {
-                setItems(response);
-            } else {
-                const filtered = response.filter((i) => i.category === id);
-                setItems(filtered);
-            }
+        const db = getFirestore();
+
+        const ref = !id ? collection(db, "items") : query(collection(db, "items"), where("categoryId", "==", id));
+
+        getDocs(ref)
+        .then((snapshot) => {
+            setItems(
+                snapshot.docs.map((doc) => {
+                    return { id: doc.id, ...doc.data()};
+                })
+            );
         })
         .finally(() => setLoading(false));
     }, [id]);
+
 
     if (loading) return (<Container><h1>Cargando...</h1></Container>);
 
@@ -36,9 +37,9 @@ export const ItemListContainer = () => {
                         <Card className="h-100 d-flex flex-column">
                             <Card.Img variant="top" src={i.image} className="card-img" />
                             <Card.Body className="d-flex flex-column">
-                                <Card.Title>{i.name}</Card.Title>
-                                <Card.Text>{i.detail}</Card.Text>
-                                <Card.Text>{i.category}</Card.Text>
+                                <Card.Title>{i.title}</Card.Title>
+                                <Card.Text>{i.description}</Card.Text>
+                                <Card.Text>{i.categoryId}</Card.Text>
                                 <div className="mt-auto">
                                     <Link to={`/item/${i.id}`}><Button variant="primary">Ver más</Button></Link>
                                 </div>

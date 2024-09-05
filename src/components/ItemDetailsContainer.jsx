@@ -1,58 +1,39 @@
-// import Container from "react-bootstrap/Container";
-// import { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-
-// import data from "../../data/productos.json";
-
-// export const ItemDetailsContainer = () => {
-//     const [item, setItem] = useState(null);
-//     const [loading, setLoading] = useState(true);
-//     const { id } = useParams();
-
-//     useEffect(()=> {
-//         new Promise((resolve) => setTimeout(() => resolve(data), 2000))
-//         .then(response => {
-//             const found = response.find((i) => i.id === id);
-//             setItem(found); 
-//         })
-//         .finally(() => setLoading(false));
-//     }, [id]);
-
-//     if(loading) return <Container><h1>Cargando...</h1></Container>;
-
-//     return (
-//         <Container className="mt-4">
-//             <h1>{item.name}</h1>
-//             <h2>{item.category}</h2>
-//             <h3>{item.detail}</h3>
-//             <img src={item.image} height={400} alt={item.name} />  
-//             <br></br>
-//             <b>${item.price}</b>
-//         </Container>
-//     );
-// }
-
 import Container from "react-bootstrap/Container";
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'; 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import data from "../../data/productos.json";
 import './ItemDetailsContainer.css'; 
+import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { ItemCount } from "./ItemQuantitySelector";
+import { ItemsContext } from "../context/ItemsContext";
+
 
 export const ItemDetailsContainer = () => {
     const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
+    const {addItem} = useContext(ItemsContext)
+
     useEffect(() => {
-        new Promise((resolve) => setTimeout(() => resolve(data), 2000))
-        .then(response => {
-            const found = response.find((i) => i.id === id);
-            setItem(found); 
+        const db = getFirestore();
+
+        const refDoc = doc(db, "items", id);
+
+        getDoc(refDoc)
+        .then((snapshot) => {
+            setItem({ ...snapshot.data(), id: snapshot.id});
         })
+
         .finally(() => setLoading(false));
     }, [id]);
+
+    const onAdd = (quantity) => {
+        addItem({...item, quantity})
+
+        alert(`Agregaste ${quantity} a tu carrito`)
+    }
+
 
     if (loading) return <Container><h1>Cargando...</h1></Container>;
 
@@ -65,12 +46,16 @@ export const ItemDetailsContainer = () => {
                 <Card.Body className="d-flex flex-column">
                     <div className="d-flex justify-content-between align-items-start">
                         <div>
-                            <Card.Title>{item.name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{item.category}</Card.Subtitle>
-                            <Card.Text>{item.detail}</Card.Text>
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{item.categoryId}</Card.Subtitle>
+                            <Card.Text>{item.description}</Card.Text>
                         </div>
                         <div className="d-flex flex-column align-items-end">
                             <Card.Text className="price">${item.price}</Card.Text>
+                            <Card.Text className="stock">Stock:{item.stock}</Card.Text>
+                            <div>
+                            <ItemCount stock= {item.stock} onAdd={onAdd} />
+                            </div>
                             <Link to="/" className="btn btn-secondary mt-3">Volver</Link>
                         </div>
                     </div>
